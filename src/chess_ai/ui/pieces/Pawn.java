@@ -9,6 +9,18 @@ package chess_ai.ui.pieces;
  *
  * @author dishantsheth
  */
-public class Pawn {
+public class Pawn extends Piece{
     
+    private Piece pawn;
+    
+    public Pawn(int color){
+        pawn = new Piece();
+        pawn.color = color;
+        pawn.pieceName = ((color == 0) ? "Black" : "White") + "Pawn";
+        pawn.iconLocation = pawn.baseLocation + ((color == 0) ? "BP" : "WP") + ".png";
+    }
+    
+    public String getLocation(){
+        return pawn.iconLocation;
+    }
 }
